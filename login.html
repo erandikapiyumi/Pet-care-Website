@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Pet Care Hub</title>
+    
+    <!-- CSS Internal Styling (වෙනම Files අවශ්‍ය නැත) -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a; /* Modern Dark Theme */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .login-card {
+            background: #1e293b;
+            padding: 40px 30px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 400px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid #334155;
+        }
+
+        .back-home-link {
+            display: inline-block;
+            color: #1abc9c;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: color 0.2s ease;
+        }
+
+        .back-home-link:hover {
+            color: #16a085;
+            text-decoration: underline;
+        }
+
+        .login-card h2 {
+            margin: 0 0 6px 0;
+            color: #ffffff;
+            font-size: 26px;
+        }
+
+        .login-subtitle {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #1abc9c;
+        }
+
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 13px;
+            margin-bottom: 20px;
+            color: #cbd5e1;
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            cursor: pointer;
+        }
+
+        .forgot-pass {
+            color: #1abc9c;
+            text-decoration: none;
+        }
+
+        .forgot-pass:hover {
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 13px;
+            background: #1abc9c;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.1s ease;
+        }
+
+        .submit-btn:hover {
+            background: #16a085;
+            transform: translateY(-2px);
+        }
+
+        .signup-link {
+            text-align: center;
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 22px;
+        }
+
+        .signup-link a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .signup-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="login-card">
+        <!-- Main Page එකට යන්න Link එක -->
+        <a href="index.html" class="back-home-link">← Back to Home</a>
+
+        <h2>Welcome Back! 🐾</h2>
+        <p class="login-subtitle">Sign in to manage your appointments and pet details</p>
+
+        <form id="loginForm" onsubmit="handleLoginPageSubmit(event)">
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="loginEmail" placeholder="example@mail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="loginPassword" placeholder="••••••••" required>
+            </div>
+
+            <div class="form-options">
+                <label class="remember-me">
+                    <input type="checkbox" id="rememberMe"> Remember me
+                </label>
+                <a href="#" class="forgot-pass">Forgot Password?</a>
+            </div>
+
+            <button type="submit" class="submit-btn">Login 🚀</button>
+
+            <p class="signup-link">
+                Don't have an account? <a href="register.html">Sign up here</a>
+            </p>
+        </form>
+    </div>
+
+    <script>
+    function handleLoginPageSubmit(event) {
+        event.preventDefault();
+        const email = document.getElementById('loginEmail').value;
+        alert(`Successfully logged in as ${email}!`);
+        window.location.href = "index.html"; // Login වුණාට පස්සේ index.html එකට යැවීම
+    }
+    </script>
+</body>
+</html>

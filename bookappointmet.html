@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Appointment</title>
+    <!-- CSS File එක Connect කිරීම -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+
+    <!-- APPOINTMENT & BANK SECTION ONLY -->
+    <section class="appointment-section" id="appointment">
+        <h2>Book an Appointment</h2>
+        <p class="section-subtitle">Schedule a session for your pet and complete payment online</p>
+
+        <div class="appointment-container">
+            <!-- Appointment Form -->
+            <div class="appointment-form-box">
+                <h3>📅 Fill Appointment Details</h3>
+                <form id="appointmentForm" onsubmit="handleAppointmentSubmit(event)">
+                    <div class="form-group">
+                        <label>Owner Name</label>
+                        <input type="text" id="ownerName" placeholder="Enter your full name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Phone Number</label>
+                        <input type="tel" id="ownerPhone" placeholder="07X XXXXXXX" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Pet Type</label>
+                        <select id="petType" required>
+                            <option value="">Select Pet Type</option>
+                            <option value="dog">Dog 🐕</option>
+                            <option value="cat">Cat 🐈</option>
+                            <option value="other">Other 🦜</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Select Service</label>
+                        <select id="serviceType" required>
+                            <option value="grooming">Pet Grooming</option>
+                            <option value="vet">Veterinary Care</option>
+                            <option value="boarding">Boarding &amp; Daycare</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Preferred Date &amp; Time</label>
+                        <input type="datetime-local" id="appointmentDate" required>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Confirm Booking 🐾</button>
+                </form>
+            </div>
+
+            <!-- Bank Details Box -->
+            <div class="bank-details-box">
+                <h3>💳 Bank Payment Details</h3>
+                <p style="font-size: 13px; color: rgba(255,255,255,0.7);">Deposit payment to the following account to confirm your slot:</p>
+
+                <div class="bank-card">
+                    <p><strong>Bank Name:</strong> Commercial Bank</p>
+                    <p><strong>Account Name:</strong> Pet Care Hub (Pvt) Ltd</p>
+                    <p><strong>Account Number:</strong> 8009 1234 5678</p>
+                    <p><strong>Branch:</strong> Colombo Main Branch</p>
+                </div>
+
+                <div class="form-group">
+                    <label>Upload Payment Slip / Screenshot</label>
+                    <div class="upload-btn-wrapper">
+                        <input type="file" id="paymentSlip" accept="image/*" class="file-input-btn" required>
+                    </div>
+                </div>
+
+                <p style="font-size: 12px; color: #1abc9c;">* Your booking will be confirmed within 1 hour after payment verification.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- JAVASCRIPT CODE -->
+    <script>
+    function handleAppointmentSubmit(event) {
+        event.preventDefault();
+        
+        const name = document.getElementById('ownerName').value;
+        const phone = document.getElementById('ownerPhone').value;
+        const slip = document.getElementById('paymentSlip').files[0];
+
+        if (!slip) {
+            alert('Please upload your payment slip!');
+            return;
+        }
+
+        alert(`Thank you, ${name}! Your appointment request has been submitted successfully. We will contact you at ${phone}.`);
+        
+        document.getElementById('appointmentForm').reset();
+        document.getElementById('paymentSlip').value = "";
+    }
+    </script>
+</body>
+</html>

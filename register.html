@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Pet Care Hub</title>
+    
+    <!-- CSS Internal Styling -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0f172a; /* Modern Dark Theme */
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .register-card {
+            background: #1e293b;
+            padding: 40px 30px;
+            border-radius: 16px;
+            width: 100%;
+            max-width: 420px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            border: 1px solid #334155;
+        }
+
+        .back-home-link {
+            display: inline-block;
+            color: #1abc9c;
+            text-decoration: none;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 20px;
+            transition: color 0.2s ease;
+        }
+
+        .back-home-link:hover {
+            color: #16a085;
+            text-decoration: underline;
+        }
+
+        .register-card h2 {
+            margin: 0 0 6px 0;
+            color: #ffffff;
+            font-size: 26px;
+        }
+
+        .register-subtitle {
+            color: #94a3b8;
+            font-size: 14px;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            margin-bottom: 6px;
+            color: #cbd5e1;
+            font-weight: 500;
+        }
+
+        .form-group input[type="text"],
+        .form-group input[type="email"],
+        .form-group input[type="tel"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 12px 14px;
+            border-radius: 8px;
+            border: 1px solid #334155;
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #1abc9c;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 13px;
+            background: #1abc9c;
+            color: #ffffff;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease, transform 0.1s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background: #16a085;
+            transform: translateY(-2px);
+        }
+
+        .login-link {
+            text-align: center;
+            font-size: 14px;
+            color: #94a3b8;
+            margin-top: 22px;
+        }
+
+        .login-link a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="register-card">
+        <!-- Main Page එකට යන්න Link එක -->
+        <a href="index.html" class="back-home-link">← Back to Home</a>
+
+        <h2>Create Account 🐾</h2>
+        <p class="register-subtitle">Join Pet Care Hub to manage your pet services easily</p>
+
+        <form id="registerForm" onsubmit="handleRegisterSubmit(event)">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="regName" placeholder="John Doe" required>
+            </div>
+
+            <div class="form-group">
+                <label>Email Address</label>
+                <input type="email" id="regEmail" placeholder="example@mail.com" required>
+            </div>
+
+            <div class="form-group">
+                <label>Phone Number</label>
+                <input type="tel" id="regPhone" placeholder="07X XXXXXXX" required>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="regPassword" placeholder="Create a strong password" required>
+            </div>
+
+            <button type="submit" class="submit-btn">Register Account 🚀</button>
+
+            <p class="login-link">
+                Already have an account? <a href="login.html">Log in here</a>
+            </p>
+        </form>
+    </div>
+
+    <script>
+    function handleRegisterSubmit(event) {
+        event.preventDefault();
+        const name = document.getElementById('regName').value;
+        alert(`Account created successfully for ${name}! Please Log In.`);
+        
+        // Account එක හදාගත්තට පස්සේ Log In page එකට යවනවා:
+        window.location.href = "login.html";
+    }
+    </script>
+</body>
+</html>
