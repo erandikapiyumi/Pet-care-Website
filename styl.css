@@ -282,3 +282,37 @@ footer {
     background: #16a085;
     color: #fff;
 }
+/* Phones සහ Small Screens සඳහා (768px ට අඩු) */
+@media screen and (max-width: 768px) {
+  
+  /* 1. Header & Nav Bar එක පහළට සැකසීම */
+  header {
+    flex-direction: column;
+    padding: 15px;
+    gap: 15px;
+  }
+
+  /* 2. Navigation Links ටික Column එකක් ලෙස පෙළගැස්වීම */
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    gap: 10px;
+  }
+
+  /* 3. Hero Image එක Screen එකට ගැලපෙන සේ Autosize කිරීම */
+  .hero-image img, 
+  img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* 4. Log In / Sign Up Buttons Center කිරීම */
+  .auth-buttons {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    gap: 10px;
+  }
+}
